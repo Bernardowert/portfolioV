@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    -webkit-font-smoothing:Antialiased;
+     font-family: var(--font-primary);
+     color: var(--gray-dark-600);
+     transition: color .3s, background-color .3s;
+}
+
+body{
+    background-color: var(--gray-dark-default);
+}
+
+a{
+    display: block;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+button{
+    cursor: pointer;
+    background-color: transparent;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+
+html{
+    font-size: 62.5%;
+    @include responsive('laptop'){
+        font-size: 57.5%;
+    }
+    @include responsive('tablet'){
+        font-size: 62.5%;
+    }
+}
+
+html,
+body{
+    overflow-x: hidden;
+}

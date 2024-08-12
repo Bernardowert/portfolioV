@@ -1,0 +1,12 @@
+@keyframes fadeIn {
+    from{
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 5px rgba(16, 185, 129, 0.617);
+    }
+    to{
+        transform: scale(3);
+        opacity: 0.2;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.617);
+    }
+}

@@ -1,0 +1,19 @@
+.btn{
+    display: inline-block;
+    line-height: 3.6rem;
+    padding: 0 1.6rem;
+    color: var(--gray-dark-50);
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 12px;  
+   transition: all .3s;
+   border: 1px solid transparent;
+   &-primary{
+    background-color: var(--gray-dark-900);
+    &:is(:hover,:focus){
+           border-color: #fff;
+            background-color: transparent;
+            color: #fff;
+    }
+   }
+}

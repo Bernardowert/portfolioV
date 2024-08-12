@@ -1,0 +1,240 @@
+.s-hero{
+    padding-top: 17.4rem;
+    padding-bottom: 9.6rem;
+    .container{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .area-text{
+        width: 100%;
+        max-width: 76.8rem;
+        p{
+            margin-top: 0.8rem;
+        }
+        ul{
+            &:not(.listing-socials){
+                margin: 4.8rem 0;
+                 li{
+                    @include flex-center;
+                    gap: 0.8rem;
+                    &:not(:last-child){
+                        margin-bottom: 0.8rem;
+                    }
+                    &:last-child{
+                        .icon{
+                            position: relative;
+                            &::before{
+                                content: "";
+                                width: 8px;
+                                border-radius: 50%;
+                                z-index: -1;
+                                height: 8px;
+                                background-color: rgba(16, 185, 129, 0.8);
+                                position: absolute;
+                                animation: fadeIn 1s infinite;
+                            }
+                        }
+                    }
+                    .icon{
+                        width: 2.4rem;
+                        height: 2.4rem;
+                        @include flex-justify(center);
+                    }
+                    span{
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                    }
+                 }
+            }
+        }
+    }
+    .area-image{
+        width: 100%;
+        max-width: 32rem;
+        height: 36rem;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: -1;
+             width: 100%;
+             max-width: 28rem;
+             height: 32rem;
+             background-color: var(--gray-dark-200);
+             bottom: 0;
+             right: 0;
+             transition: background-color .3s;
+        }
+    }
+    @include responsive('tablet'){
+        padding-top: 14.4rem;
+        .container{
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .area-text{
+            text-align: center;
+            max-width: 100%;
+            ul{
+                &:not(.listing-socials){
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    li{
+                        &:not(:last-child){
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                justify-content: center;
+            }
+        }
+        .area-image{
+            margin: 0 auto;
+        }
+    }
+    @include responsive('mobile'){
+        padding-top: 10.4rem;
+        .area-text{
+            h1{
+                font-size: 4.3rem;
+                line-height: normal;
+            }
+            ul{
+                &:last-child{
+                    justify-content: flex-start;
+                }
+                &:not(.listing-socials){
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+        }
+    }
+}
+
+.s-about{
+    padding: 9.6rem 0;
+    background-color: var(--gray-dark-50);
+    .info{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 4.8rem;
+        .area-image{
+            width: 100%;
+            max-width: 58.4rem;
+            height: 51.3rem;
+            position: relative;
+            img{
+                position: absolute;
+                top: 0;
+                left: 4rem;
+                border: 8px solid #000;
+            }
+            &::before{
+               content: "";
+               position: absolute;
+               transition: background-color .3s;
+               width: 100%;
+               max-width: 40rem;
+               height: 48rem;
+               background-color: var(--gray-dark-200);
+               top: 4rem;
+               left: 0;
+            } 
+        }
+        .area-text{
+            width: 100%;
+            max-width: 58.4rem;
+            .information{
+                margin-top: 2.4rem;
+                p{
+                    &:not(:last-child){
+                        margin-bottom: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+    @include responsive('tablet'){
+        padding-block: 5.6rem;
+       .info{
+         margin-top: 2.8rem;
+          flex-direction: column;
+          align-items: center;
+          gap: 5rem;
+          .area-image{
+            max-width: 43.4rem;
+          }
+          .area-text{
+            text-align: center;
+            max-width: 100%;
+          }
+       }
+    }
+    @include responsive('mobile'){
+        .info{
+            gap: 2rem;
+            .area-image{
+                height: auto;
+                max-width: 100%;
+                img{
+                    position: static;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.s-skills{
+    padding: 9.6rem 0;
+    .items{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        width: 100%;
+        max-width: 70rem;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    @include responsive('mobile'){
+        padding-block: 4.6rem;
+        .items{
+            grid-template-columns: repeat(3,1fr);
+            row-gap: 3rem;
+        }
+    }
+}
+
+.s-projetos{
+    padding: 9.6rem 0;
+    background-color: var(--gray-dark-50);
+    .items{
+        .card-project{
+            &:not(:last-child){
+                margin-bottom: 4.8rem;
+            }
+            &:nth-child(even){
+                flex-direction: row-reverse;
+            }
+        }
+    }
+    @include responsive('tablet'){
+        padding-top: 5.7rem;
+        .items{
+            .card-project{
+                &,&:nth-child(even){
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
